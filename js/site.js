@@ -57,7 +57,7 @@ document.querySelector("#parse-button").addEventListener('click', function () {
                 if(index < rowItems.length) {
                     templateFields += `<td>${rowItems[index]}</td>`;
                 } else if(index >= rowItems.length) {
-                    templateFields += `<tr>`;
+                    templateFields += `</tr>`;
                 }
                 
             }

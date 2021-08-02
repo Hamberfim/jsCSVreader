@@ -110,14 +110,14 @@
                                     }
 
                                     // create a formated/markup template literal of the row items
-                                    let templateFields = "<tr>";
+                                    let templateFields = "&lt;tr>";
                                     for (let i = 0; i < rows.length; i++) {
                                         let rowItems = rows[i].split(",");
                                         for (let index = 0; index <= rowItems.length; index++) {
                                             if(index < rowItems.length) {
-                                                templateFields += `<td>${rowItems[index]}</td>`;
+                                                templateFields += `&lt;td>${rowItems[index]}&lt;/td>`;
                                             } else if(index >= rowItems.length) {
-                                                templateFields += `<tr>`;
+                                                templateFields += `&lt;/tr>`;
                                             }
                                             
                                         }
