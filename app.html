@@ -49,8 +49,43 @@
 
     <!-- Main Section -->
     <main class="flex-shrink-0">
-        <div class="container">
-
+        <div class="container mt-4">
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col border-end border-1 col-lg-4">
+                    <h4 class="display-6 fw-bold mb-1 mt-3 mt-md-auto"><span
+                            class="hundredTitle text-nowrap">JS CSV Reader</span>:<br><span class="text-nowrap">A Coding
+                            Project</span></h4>
+                    <h5 class="lead">A javascript coding exercise. A program that reads a user CSV file and then displays the data formated in the page.</h5>
+                    <h4 class="mt-3 border-bottom border-1 border-dark">Instructions</h4>
+                    <p>Browse to CSV on your system a Starting value (e.g., 1) and an Ending value (e.g., 100). Press the "Run Code" button and
+                        the javascript code will generate the values.</p>
+                </div>
+                <div class="col">
+                    <!-- basic get csv data -->
+                <div class="card my-2">
+                    <h3 class="card-header bg-warning">Read in your CSV File:</h3>
+                    <div class="card-body">
+                        <input class="btn" type="file" id="file-input" />
+                        <button class="btn btn-secondary" id="parse-button">Parse File</button>
+                        <!-- <pre class="my-5 mx-3" id="file-contents"> populate content here </pre> -->
+                        <div class="col my-1 mx-0">
+                            <div class="table-responsive rounded">
+                                <table class="table table-striped">
+                                    <thead class="table-dark text-white">
+                                        <tr id="file-fieldHeaders">
+                                            <!-- Headers here -->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="file-contents">
+                                        <!-- Row Items here-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
     </main>
 
