@@ -148,10 +148,16 @@
                             class="fw-bold">reader.addEventListener()</span> is triggered. That content is then split on
                         each new line and store in the 'newTextLines' string array.</p>
                     <p>Next we slice off the first line of the CSV file as header information and use a for loop to
-                        populate a template literal as header titles for our table to displayed back to the page by
+                        populate a template literal as header titles ('titles') for our table to displayed back to the
+                        page by
                         using the <span class="fw-bold">document.getElementById()</span> its <span
                             class="fw-bold">.innerHTML</span> property.</p>
-                    <br>
+                    <p>Then we slice the remaing content from the header content in the string array, looping through it
+                        to create clean rows, then spliting those rows.</p>
+                    <p>Finally, we we use nested 'for loops' to get each field value per row and populate a template
+                        literal to display the table row and table data for each value by using the <span
+                            class="fw-bold">document.getElementById()</span> its <span class="fw-bold">.innerHTML</span>
+                        property.</p>
                 </div>
             </div>
         </div>
