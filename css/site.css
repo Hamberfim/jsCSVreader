@@ -1,0 +1,108 @@
+/* custom css - adhamlin */
+
+/* hamberfim logo color sampler 
+    red: #b02d25,
+    lt.brown: #c5beaa,
+    black: #1b1216,
+    mustard: #cf9635,
+    kakis: #cca164,
+    dustBlue: #7598b7,
+    lt.Blue: #32a4e3,
+    blue: #1b58c8,
+    lt.Gray: #e0e6ea,
+    dustMoave: #ba7e83
+
+.color_sampler {
+    color: #b02d25;
+    color: #c5beaa;
+    color: #1b1216;
+    color: #cf9635;
+    color: #cca164;
+    color: #7598b7;
+    color: #32a4e3;
+    color: #1b58c8;
+    color: #e0e6ea;
+    color: #ba7e83;
+} */
+
+
+/* set global color for template use */
+:root {
+    --primary-color: #1d5888;
+    --secondary-color: #ff993b;
+    --dark-color: #292929;
+    --white-color: #e7e7e7;
+}
+
+body {
+    color: var(--dark-color) !important;
+}
+
+nav {
+    padding: 0.25rem;
+    background-color: var(--dark-color) !important;
+}
+
+footer {
+    padding: 0.25rem;
+    background-color: var(--dark-color) !important;
+}
+
+footer .social>a {
+    color: var(--white-color);
+    opacity: 0.75;
+}
+
+footer .social>a:hover {
+    color: var(--secondary-color);
+    opacity: 0.9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+}
+
+.htmlicon {
+    color: orangered;
+}
+
+.cssicon {
+    color: blue;
+}
+
+.bsicon {
+    color: purple;
+}
+
+.jsicon {
+    color: #ff993b;
+}
+
+main>.container {
+    padding: 60px 15px 0;
+}
+
+.checklist>li i {
+    color: var(--secondary-color);
+}
+
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Prism CSS for Pre/Code tags */
+
+code[class*="language-"], pre[class*="language-"] {
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 1.5rem;
+}
