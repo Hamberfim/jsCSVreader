@@ -41,7 +41,8 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/Hamberfim/jsCSVreader">Project Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Hamberfim/jsCSVreader">Project Git
+                            Repo</a>
                     </li>
                 </ul>
             </div>
@@ -135,13 +136,21 @@
                 <div class="col-md-4">
                     <!-- Code Description -->
                     <h3 class="fw-bold">JS CSV Reader</h3>
-                    <p>Using HTML, JavaScript, custom CSS & Bootstrap to design an application that takes a user selected CSV file, reads the data and displays it back to the page formated.</p>
-                    <p>The code is structure in single function.</p>
-                    <h5 class="fw-bold">| function |</h5>
-                    <p>| description |</p>
-                    <br>
-                    <h5 class="fw-bold">document.querySelector()</h5>
-                    <p>| description |</p>
+                    <p>Using HTML, JavaScript, custom CSS & Bootstrap to design an application that takes a user
+                        selected CSV file, reads the data and displays it back to the page formated.</p>
+                    <h5 class="fw-bold">The code is structure as a single function.</h5>
+                    <p>Using the DOM we locate several html tags by their id using <span
+                            class="fw-bold">document.querySelector()</span>. The user can browse to a local CSV file and
+                        is access by JavaScript as a 'file object' which can provide metadata like the file's name, type
+                        and size (not used in this example).</p>
+                    <p>The contents of the file object is read by the new <span class="fw-bold">FileReader()</span>
+                        object, is preformed asynchronously and stored in the 'text' variable when <span
+                            class="fw-bold">reader.addEventListener()</span> is triggered. That content is then split on
+                        each new line and store in the 'newTextLines' string array.</p>
+                    <p>Next we slice off the first line of the CSV file as header information and use a for loop to
+                        populate a template literal as header titles for our table to displayed back to the page by
+                        using the <span class="fw-bold">document.getElementById()</span> its <span
+                            class="fw-bold">.innerHTML</span> property.</p>
                     <br>
                 </div>
             </div>
