@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Anthony Hamlin - The Code</title>
+    <title>JS CVS Reader: A Coding Project by Anthony Hamlin - The Code</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img class="d-inline-block ms-1" src="img/android-chrome-192x192.png"
-                    alt="Hamberfim Logo" height="40"><span class="align-text-top"> APP NAME</span></a>
+                    alt="Hamberfim Logo" height="40"><span class="align-text-top"> JS CVS Reader</span></a>
             <button class="navbar-toggler ms-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://github.com/Hamberfim">Project Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/Hamberfim/jsCSVreader">Project Git Repo</a>
                     </li>
                 </ul>
             </div>
@@ -57,10 +57,68 @@
                     <!-- Javascript Display -->
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // call hello World to test Prism Code Display
-                            function helloWorld() {
-                                alert("Test - Hello World!");
-                            }
+                            "use strict";
+
+                            // basic read csv data
+                            document.querySelector("#parse-button").addEventListener('click', function () {
+                                let file = document.querySelector("#file-input").files[0];
+                                let reader = new FileReader();
+                                reader.addEventListener('load', function (e) {
+                                    let text = e.target.result;
+
+                                    let newTextLines = "";
+
+                                    if (text !== "") {
+                                        newTextLines = text.split("\n"); // split into an array for each line
+
+                                    }
+
+                                    let headerTitleList = newTextLines[0].split(",");
+
+                                    let titles = "";
+                                    for (let i = 0; i < headerTitleList.length; i++) {
+                                        titles += `<th scope="col" class="text-nowrap">${headerTitleList[i]}</th>`;
+
+                                    }
+                                    document.getElementById('file-fieldHeaders').innerHTML = titles;
+
+
+                                    let contentItemsList = newTextLines.slice(1, newTextLines.length);
+
+                                    let itemsList = "";
+                                    for (let i = 0; i < contentItemsList.length; i++) {
+                                        itemsList += contentItemsList[i];
+
+                                    }
+
+                                    let rows = "";
+                                    if (itemsList !== "") {
+                                        rows = itemsList.split("\r"); // split on each row
+
+                                    }
+                                    //
+
+                                    // 
+                                    let templateFields = "<tr>";
+                                    for (let i = 0; i < rows.length; i++) {
+                                        let rowItems = rows[i].split(",");
+                                        for (let index = 0; index <= rowItems.length; index++) {
+                                            if(index < rowItems.length) {
+                                                templateFields += `<td>${rowItems[index]}</td>`;
+                                            } else if(index >= rowItems.length) {
+                                                templateFields += `<tr>`;
+                                            }
+                                            
+                                        }
+
+                                    }
+
+                                    document.getElementById('file-contents').innerHTML = templateFields;
+
+                                });
+
+                                reader.readAsText(file);
+                            });
                         </code>
                     </pre>
                 </div>
@@ -69,6 +127,7 @@
                     <p>The code is structure in one function.</p>
                     <h5>Hello World</h5>
                     <p>The Hello World function is call to display an alert with a message containing<br>'Test - Hello World!'</p>
+                    <br>
                 </div>
             </div>
         </div>
